@@ -19,6 +19,7 @@
 import VueRenderer from '@knxcloud/lowcode-vue-renderer';
 import { buildComponents, AssetLoader, noop } from '@knxcloud/lowcode-utils';
 import { toRaw, Suspense, reactive } from 'vue';
+import { getSchemaByVersion } from '../api'
 
 window['__VUE_HMR_RUNTIME__'] = {
   reload: noop,
@@ -27,8 +28,12 @@ window['__VUE_HMR_RUNTIME__'] = {
 };
 
 const props = defineProps({
+  // 公网外部参数
   packages: [],
-  pageSchema: {}
+  pageSchema: {},
+  // Castle内部参数
+  pageName: '',
+  version: '',
 })
 
 const data = reactive({
@@ -37,11 +42,18 @@ const data = reactive({
 })
 
 const init = async () => {
-  // const packages = JSON.parse(window.localStorage.getItem('packages') || '[]');
-  // const pageSchema = JSON.parse(window.localStorage.getItem('pageSchema') || '{}');
-  const packages = props.packages
-  const pageSchema = props.pageSchema
-
+  let packages, pageSchema
+  if (props.pageName && props.version) {
+    const res = await getSchemaByVersion({ 
+      pageName: props.pageName,
+      version: props.version,
+    });
+    packages = res.packages
+    pageSchema = res.pageSchema
+  } else {
+    packages = props.packages
+    pageSchema = props.pageSchema
+  }
 
   console.log('props', props);
   const { componentsMap: componentsMapArray = [], componentsTree = [] } = pageSchema;

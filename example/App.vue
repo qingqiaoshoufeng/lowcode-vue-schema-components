@@ -1,6 +1,6 @@
 <template>
 	<Suspense>
-		<LowCodePreview :packages="packages" :pageSchema="pageSchema" />
+		<LowCodePreview pageName="castle-lowcode-list-page" version="3htfus4y" />
 	</Suspense>
 </template>
 
