@@ -1,6 +1,6 @@
 <template>
 	<Suspense>
-		<LowCodePreview pageName="castle-lowcode-list-page" version="3htfus4y" />
+		<LowCodePreview pageName="castle-lowcode-list-page" version="b9w4xpis" />
 	</Suspense>
 </template>
 
