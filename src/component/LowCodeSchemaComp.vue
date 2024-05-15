@@ -6,6 +6,7 @@
 					class="lowcode-plugin-sample-preview-content"
 					:schema="data.schema"
 					:components="data.components"
+          :appHelper="props.appHelper"
 				/>
 			</template>
 			<template #fallback>
@@ -28,7 +29,8 @@ window['__VUE_HMR_RUNTIME__'] = {
 
 const props = defineProps({
   packages: [],
-  projectSchema: {}
+  projectSchema: {},
+  appHelper: {},
 })
 
 const data = reactive({
