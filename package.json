@@ -1,7 +1,7 @@
 {
   "name": "@castle/lowcode-vue-schema-component",
   "private": false,
-  "version": "0.0.11",
+  "version": "0.0.26",
   "description": "lowcode-vue的schema渲染组件",
   "main": "dist/lib/index.js",
   "author": "ChenYang",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@alilc/lowcode-types": "^1.1.7",
+    "@castle/ant-design-vue": "^3.2.15-castle.6",
     "@knxcloud/lowcode-utils": "^1.6.0-beta.6",
     "@knxcloud/lowcode-vue-renderer": "^1.6.0-beta.9",
     "axios": "^1.6.7",
@@ -34,7 +35,6 @@
     "build-plugin-react-app": "^1.8.5",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "6",
-    "css-loader": "^6.10.0",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",

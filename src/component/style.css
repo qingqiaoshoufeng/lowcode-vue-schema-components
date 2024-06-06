@@ -1,0 +1,66 @@
+/* stylelint-disable order/properties-order */
+.vue-renderer-wrap {
+  position: relative;
+}
+
+.vue-renderer-wrap:hover {
+  outline: dashed 1px #1890ff;
+}
+
+.vue-renderer-wrap .edit-page {
+  display: none;
+  transform: translateX(-50%) translateY(100%);
+  cursor: pointer;
+}
+
+.vue-renderer-wrap:hover .edit-page {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 50%;
+}
+
+#lce-container {
+  height: 100%;
+  max-height: 100%!important;
+  overflow: hidden!important;
+  position: unset!important;
+  text-align: center!important;
+}
+
+.lowcode-wrap {
+	position: relative;
+}
+
+.lowcode-wrap .lowcode-plugin-sample-preview-loading {
+	text-align: center;
+  padding: 100px 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+
+.full-modal .ant-modal {
+    max-width: 100%;
+    top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+.full-modal .ant-modal-content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh);
+}
+
+.full-modal .ant-modal-body {
+  flex: 1;
+  padding: 0;
+}
+
+/* .full-modal .ant-modal-footer {
+  display: none;
+} */
