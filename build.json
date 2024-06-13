@@ -3,6 +3,14 @@
   "publicPath": "/",
   "outputDir": "dist",
   "vendor": false,
+  "externals": {
+    "lodash": "var window._",
+    "moment": "var window.moment",
+    "react": "var window.React",
+    "react-dom": "var window.ReactDOM",
+    "vue": "var window.Vue",
+    "@castle/ant-design-vue": "var window.antd"
+  },
   "plugins": [
     "build-plugin-react-app",
     "./build.plugin.js"

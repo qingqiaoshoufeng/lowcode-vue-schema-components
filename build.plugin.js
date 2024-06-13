@@ -1,5 +1,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
 module.exports = ({ onGetWebpackConfig }) => {
@@ -24,6 +25,7 @@ module.exports = ({ onGetWebpackConfig }) => {
       .loader('vue-loader')
       .end();
 
+    config.plugin('BundleAnalyzerPlugin').use(BundleAnalyzerPlugin);
     config.plugin('vue-loader-plugin').use(VueLoaderPlugin);
     // config.merge({
     //   output: {
