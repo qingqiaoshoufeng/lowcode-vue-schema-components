@@ -10,7 +10,7 @@
 							:components="data.components"
 							:appHelper="mergedAppHelper"
 							:requestHandlersMap="requestHandlersMap"
-              v-bind="othersProps"
+              v-bind="passProps"
 						/>
 					</spin>
 					<button
@@ -61,7 +61,7 @@ window['__VUE_HMR_RUNTIME__'] = {
 	createRecord: noop,
 };
 
-const { isDev, appHelper, fetchHandler, ...othersProps } = inject('$options');
+const { isDev, appHelper, fetchHandler, ...otherOptions } = inject('$options');
 
 const props = defineProps({
 	// 公网外部参数
@@ -70,6 +70,7 @@ const props = defineProps({
 	pageSchema: {},
 	appHelper: undefined,
 	fetchHandler: undefined,
+	passProps: {},
 
 	// Castle内部参数
 	pageName: '',
@@ -194,7 +195,8 @@ const openEdit = async () => {
 		pageId: props.pageId,
 	});
 
-	window.$lowCode.init({ appHelper, fetchHandler });
+	// passProps：通过 appHelper 传递 passProps 参数，保证渲染器能通过this拿到passProps的值
+	window.$lowCode.init({ appHelper: { ...appHelper, passProps: props.passProps }, fetchHandler });
 };
 </script>
 

@@ -1,7 +1,7 @@
 {
   "name": "@castle/lowcode-vue-schema-component",
   "private": false,
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "lowcode-vue的schema渲染组件",
   "main": "dist/lib/index.js",
   "author": "ChenYang",
