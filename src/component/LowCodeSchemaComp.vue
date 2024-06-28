@@ -50,10 +50,11 @@ import { buildComponents, AssetLoader, noop } from '@knxcloud/lowcode-utils';
 import { toRaw, Suspense, reactive, ref, watch, inject, computed } from 'vue';
 import { getSchemaByVersion } from '../api';
 import { Spin, Modal } from '@castle/ant-design-vue';
-import { loadScript, unloadScript, loadStyle } from '../utils/load-script.js';
+import { loadScript, unloadScript, loadStyle, unloadStyle, removeDuplicateScriptTags } from '../utils/load-script.js';
 import { createAxiosFetchHandler } from '../utils/request';
 import { merge } from 'lodash-es'
 import './style.css';
+import { css, js } from './editorFiles'
 
 window['__VUE_HMR_RUNTIME__'] = {
 	reload: noop,
@@ -61,7 +62,7 @@ window['__VUE_HMR_RUNTIME__'] = {
 	createRecord: noop,
 };
 
-const { isDev, appHelper, fetchHandler, ...othersProps } = inject('$options');
+const { isDev, appHelper, fetchHandler, localComponents, ...othersProps } = inject('$options');
 
 const props = defineProps({
 	// 公网外部参数
@@ -144,48 +145,29 @@ watch(
 	() => visible.value,
 	(val) => {
 		if (val === false) {
-			handleRenderData();
+      closeEdit()
 		}
 	}
 );
+
+const closeEdit = async () => {
+  await Promise.all(css.map(c => unloadStyle(c)))
+  await Promise.all(js.map(j => unloadScript(j)))
+  removeDuplicateScriptTags();
+  handleRenderData();
+}
 const openEdit = async () => {
 	visible.value = true;
-	await loadStyle('http://10.13.4.153:1108/css/editor.css');
-	await loadStyle(
-		'https://alifd.alicdn.com/npm/@alifd/theme-lowcode-light@0.2.1/variables.css'
-	);
-	await loadStyle(
-		'https://alifd.alicdn.com/npm/@alifd/theme-lowcode-light@0.2.1/dist/next.var.min.css'
-	);
-	await loadStyle(
-		'https://alifd.alicdn.com/npm/@alilc/lowcode-engine@1.1.7/dist/css/engine-core.css'
-	);
-	await loadStyle(
-		'https://alifd.alicdn.com/npm/@alilc/lowcode-engine-ext@1.0.5/dist/css/engine-ext.css'
-	);
-
-	await loadScript(
-		'https://g.alicdn.com/code/lib/react/16.13.1/umd/react.production.min.js'
-	);
-	await loadScript(
-		'https://g.alicdn.com/code/lib/react-dom/16.13.1/umd/react-dom.production.min.js'
-	);
-	await loadScript('https://g.alicdn.com/code/lib/prop-types/15.7.2/prop-types.js');
-	await loadScript('https://g.alicdn.com/platform/c/lodash/4.6.1/lodash.min.js');
-	await loadScript('https://g.alicdn.com/mylib/moment/2.24.0/min/moment.min.js');
-	await loadScript('https://g.alicdn.com/code/lib/alifd__next/1.26.19/next.min.js');
-	await loadScript(
-		'https://alifd.alicdn.com/npm/@alilc/lowcode-engine@1.1.7/dist/js/engine-core.js'
-	);
-	await loadScript(
-		'http://10.13.4.153:9000/castle-www/lowcode-engine-ext/test/latest/js/engine-ext.js'
-	);
-	await loadScript('http://10.13.4.153:1108/js/editor.js');
+  await Promise.all(css.map(c => loadStyle(c)))
+  for (const j of js) {
+    await loadScript(j)
+  }
 
 	// 触发editorInit插件
 	const editorInitPlugins = window.AliLowCodeEngine.plugins.get('editorInit');
 	editorInitPlugins[Object.getOwnPropertySymbols(editorInitPlugins)[0]].config.init({
 		pageId: props.pageId,
+    components: localComponents
 	});
 
 	// 触发editorInit插件
@@ -193,7 +175,6 @@ const openEdit = async () => {
 	savePagePlugins[Object.getOwnPropertySymbols(savePagePlugins)[0]].config.init({
 		pageId: props.pageId,
 	});
-
 	window.$lowCode.init({ appHelper, fetchHandler });
 };
 </script>
