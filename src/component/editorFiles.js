@@ -16,4 +16,5 @@ export const js = [
 	'https://alifd.alicdn.com/npm/@alilc/lowcode-engine@1.1.7/dist/js/engine-core.js',
 	'http://10.13.4.153:9000/castle-www/lowcode-engine-ext/test/latest/js/engine-ext.js',
 	'http://10.13.4.153:1108/js/editor.js',
+  // 'http://localhost:5558/js/editor.js' // 调试的时候开启
 ];

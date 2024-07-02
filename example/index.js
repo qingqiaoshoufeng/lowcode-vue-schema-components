@@ -23,7 +23,7 @@ axios.interceptors.response.use(
 
 const app = createApp(App);
 
-app.component('button-counter', test)
+app.component('ProCard', test)
 
 app.use(LowCodePreview, {
 	isDev: true,
@@ -35,9 +35,40 @@ app.use(LowCodePreview, {
 		},
 	},
 	fetchHandler: axios,
+  localComponents: [
+    {
+      group: '本地组件',
+      title: 'ProCard',
+      componentName: 'ProCard',
+      docUrl: '',
+      npm: {
+        package: 'CASTLE_LowCode_LocalComponents',
+        version: '1.0.0',
+        destructuring: true,
+        componentName: 'ProCard',
+      },
+      props: [
+        {
+          name: 'title',
+          propType: 'string',
+          description: '标题',
+          defaultValue: '卡片标题',
+        },
+      ],
+      snippets: [
+        {
+          title: 'ProCard',
+          screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/affix-1.jpg',
+          schema: {
+            componentName: 'ProCard',
+          },
+        },
+      ],
+    },
+  ],
 });
 app.mount('#app');
 
 console.log(app._context.components)
 
-window.localComponents = app._context.components
+window.CASTLE_LowCode_LocalComponents = app._context.components
