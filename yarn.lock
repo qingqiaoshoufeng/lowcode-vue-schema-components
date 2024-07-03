@@ -1807,6 +1807,22 @@
     vue-types "^3.0.0"
     warning "^4.0.0"
 
+"@castle/business-components@^0.2.20":
+  version "0.2.20"
+  resolved "http://castle-npm.cp.hxdi.cn/@castle%2fbusiness-components/-/business-components-0.2.20.tgz#4ba63ca23e4b13fd2e4b84a788a9a09927a604dc"
+  integrity sha512-ZHM69GzzBVI7oNUyNE7YrkPKi/nNWOMTi5qA6yPQCx60Dbeik6U2zFWU5GjU3okWPFNJOYb+pjGSOa3JtJQBMQ==
+  dependencies:
+    "@ant-design/icons-vue" "^6.1.0"
+    "@castle/castle-use" "^0.0.2"
+    ant-design-vue "^3.2.15"
+    dayjs "1.10.5"
+    print-js "^1.6.0"
+
+"@castle/castle-use@^0.0.2":
+  version "0.0.2"
+  resolved "http://castle-npm.cp.hxdi.cn/@castle%2fcastle-use/-/castle-use-0.0.2.tgz#50801960f0074d217a61f63aacdd419b64a264cd"
+  integrity sha512-KO4yZ+Im31zWJWl0CmkGm/mzRyYKmL2I5gaVYNDYBdsqs+wZEzkKeQGk0BBGx/hw6RrnrqRjwz0Xn+Na7HYZkQ==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "http://castle-npm.cp.hxdi.cn/@cnakazawa%2fwatch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -3579,6 +3595,29 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   integrity sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==
   dependencies:
     color-convert "^2.0.1"
+
+ant-design-vue@^3.2.15:
+  version "3.2.20"
+  resolved "http://castle-npm.cp.hxdi.cn/ant-design-vue/-/ant-design-vue-3.2.20.tgz#552f5f08e2acbcc10bd4089145d4cc2b15d4cfec"
+  integrity sha512-YWpMfGaGoRastIXEYfCoJiaRiDHk4chqtYhlKQM5GqPt6NfvrM1Vg2e60yHtjxlZjed91wCMm0rAmyUr7Hwzdg==
+  dependencies:
+    "@ant-design/colors" "^6.0.0"
+    "@ant-design/icons-vue" "^6.1.0"
+    "@babel/runtime" "^7.10.5"
+    "@ctrl/tinycolor" "^3.4.0"
+    "@simonwep/pickr" "~1.8.0"
+    array-tree-filter "^2.1.0"
+    async-validator "^4.0.0"
+    dayjs "^1.10.5"
+    dom-align "^1.12.1"
+    dom-scroll-into-view "^2.0.0"
+    lodash "^4.17.21"
+    lodash-es "^4.17.15"
+    resize-observer-polyfill "^1.5.1"
+    scroll-into-view-if-needed "^2.2.25"
+    shallow-equal "^1.0.0"
+    vue-types "^3.0.0"
+    warning "^4.0.0"
 
 any@^1.0.0:
   version "1.0.0"
@@ -5978,6 +6017,11 @@ data-view-byte-offset@^1.0.0:
     call-bind "^1.0.6"
     es-errors "^1.3.0"
     is-data-view "^1.0.1"
+
+dayjs@1.10.5:
+  version "1.10.5"
+  resolved "http://castle-npm.cp.hxdi.cn/dayjs/-/dayjs-1.10.5.tgz#5600df4548fc2453b3f163ebb2abbe965ccfb986"
+  integrity sha512-BUFis41ikLz+65iH6LHQCDm4YPMj5r1YFLdupPIyM4SGcXMmtiLQ7U37i+hGS8urIuqe7I/ou3IS1jVc4nbN4g==
 
 dayjs@^1.10.5:
   version "1.11.11"
@@ -13632,6 +13676,11 @@ pretty-time@^1.1.0:
   version "1.1.0"
   resolved "http://castle-npm.cp.hxdi.cn/pretty-time/-/pretty-time-1.1.0.tgz#ffb7429afabb8535c346a34e41873adf3d74dd0e"
   integrity sha512-28iF6xPQrP8Oa6uxE6a1biz+lWeTOAPKggvjB8HAs6nVMKZwf5bG++632Dx614hIWgUPkgivRfG+a8uAXGTIbA==
+
+print-js@^1.6.0:
+  version "1.6.0"
+  resolved "http://castle-npm.cp.hxdi.cn/print-js/-/print-js-1.6.0.tgz#692b046cf31992b46afa6c6d8a9db1c69d431d1f"
+  integrity sha512-BfnOIzSKbqGRtO4o0rnj/K3681BSd2QUrsIZy/+WdCIugjIswjmx3lDEZpXB2ruGf9d4b3YNINri81+J0FsBWg==
 
 prismjs@^1.17.1:
   version "1.29.0"

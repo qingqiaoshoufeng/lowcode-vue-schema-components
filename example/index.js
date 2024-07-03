@@ -6,6 +6,11 @@ import App from './App.vue';
 import LowCodePreview from '../src/index.js';
 import axios from 'axios';
 import test from './components/textComponent.vue'
+import Antd from '@castle/ant-design-vue';
+import '@castle/ant-design-vue/dist/antd.css';
+import ComponentsTemplate from "@castle/business-components";
+import "@castle/business-components/dist/style.css";
+
 axios.defaults.headers.common['Authorization'] = 'Bearer YOUR_TOKEN_HERE';
 
 axios.interceptors.response.use(
@@ -22,8 +27,9 @@ axios.interceptors.response.use(
 
 
 const app = createApp(App);
-
-app.component('ProCard', test)
+app.use(Antd)
+app.use(ComponentsTemplate);
+// app.component('ProCard', test)
 
 app.use(LowCodePreview, {
 	isDev: true,
@@ -37,16 +43,7 @@ app.use(LowCodePreview, {
 	fetchHandler: axios,
   localComponents: [
     {
-      group: '本地组件',
-      title: 'ProCard',
       componentName: 'ProCard',
-      docUrl: '',
-      npm: {
-        package: 'CASTLE_LowCode_LocalComponents',
-        version: '1.0.0',
-        destructuring: true,
-        componentName: 'ProCard',
-      },
       props: [
         {
           name: 'title',
@@ -54,7 +51,20 @@ app.use(LowCodePreview, {
           description: '标题',
           defaultValue: '卡片标题',
         },
+        {
+          name:'customTab',
+          title:{label:'自定义tab',tip:'自定义 tabList tab 标签'},
+          propType:'node',
+          initialValue: {
+            type: 'JSSlot',
+            params: ['data'],
+            value: [],
+          },
+        },
       ],
+      configure:{
+        component: { isContainer: true },
+      },
       snippets: [
         {
           title: 'ProCard',
@@ -71,4 +81,4 @@ app.mount('#app');
 
 console.log(app._context.components)
 
-window.CASTLE_LowCode_LocalComponents = app._context.components
+window.LowcodeMaterialAntVue = window.CASTLE_LowCode_LocalComponents = app._context.components
