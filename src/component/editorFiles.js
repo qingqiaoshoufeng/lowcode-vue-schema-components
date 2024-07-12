@@ -19,7 +19,7 @@ const js = [
 
 const isDev = process.env.NODE_ENV === 'development';
 
-if (isDev) {
+if (isDev && false) {
   css.push('http://localhost:5558/css/editor.css')
   js.push('http://localhost:5558/js/editor.js')
 } else {

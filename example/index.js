@@ -6,7 +6,7 @@ import App from './App.vue';
 import LowCodeRender from '../src/index.js';
 import axios from 'axios';
 import test from './components/textComponent.vue'
-import Antd from '@castle/ant-design-vue';
+import Antd, { message, notification } from '@castle/ant-design-vue';
 import '@castle/ant-design-vue/dist/antd.css';
 import ComponentsTemplate from "@castle/business-components";
 import "@castle/business-components/dist/style.css";
@@ -36,6 +36,8 @@ for (const i in icons) {
   app.component(i, icons[i]);
 }
 app.use(Antd)
+app.component('message', message)
+app.component('notification', notification)
 app.use(ComponentsTemplate);
 // app.component('ProCard', test)
 

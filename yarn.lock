@@ -1823,6 +1823,24 @@
   resolved "http://castle-npm.cp.hxdi.cn/@castle%2fcastle-use/-/castle-use-0.0.2.tgz#50801960f0074d217a61f63aacdd419b64a264cd"
   integrity sha512-KO4yZ+Im31zWJWl0CmkGm/mzRyYKmL2I5gaVYNDYBdsqs+wZEzkKeQGk0BBGx/hw6RrnrqRjwz0Xn+Na7HYZkQ==
 
+"@castle/lowcode-data-source@workspace:*":
+  version "1.0.1"
+  resolved "http://castle-npm.cp.hxdi.cn/@castle%2flowcode-data-source/-/lowcode-data-source-1.0.1.tgz#713e241a2250cf974157a150c1fce24ed8ffc23d"
+  integrity sha512-28DE6P6LNEHWtB8A632IBAOGYV94o99SzMSOxSBxGk5c4iOBkGbxF6OGNUyQs3XA4v1g5NKuthLnjc6qvm1ZWw==
+  dependencies:
+    "@knxcloud/lowcode-utils" "workspace:*"
+
+"@castle/lowcode-vue-renderer@^1.6.2":
+  version "1.6.2"
+  resolved "http://castle-npm.cp.hxdi.cn/@castle%2flowcode-vue-renderer/-/lowcode-vue-renderer-1.6.2.tgz#9badadb0896279cbd77e5a6469c624dde5f06438"
+  integrity sha512-KJ5PcTsCZwwtuvvH6y/770ahCFeEH/Lag4qx5M+zKv4nnUZuhId9ima0/rp/GmsPndKrZlBOAht0TsvUWAYJoQ==
+  dependencies:
+    "@castle/lowcode-data-source" "workspace:*"
+    "@knxcloud/lowcode-hooks" "workspace:*"
+    "@knxcloud/lowcode-utils" "workspace:*"
+    intl-messageformat "^10.5.0"
+    vue-router "^4.2.4"
+
 "@castle/lowcode-vue-schema-component@^0.0.40":
   version "0.0.40"
   resolved "http://castle-npm.cp.hxdi.cn/@castle%2flowcode-vue-schema-component/-/lowcode-vue-schema-component-0.0.40.tgz#8f9c0504063314bdbd4e977a6a9c0510ac8b1761"
@@ -2518,12 +2536,12 @@
   dependencies:
     "@knxcloud/lowcode-utils" "1.6.0"
 
-"@knxcloud/lowcode-hooks@1.6.0":
+"@knxcloud/lowcode-hooks@1.6.0", "@knxcloud/lowcode-hooks@workspace:*":
   version "1.6.0"
   resolved "http://castle-npm.cp.hxdi.cn/@knxcloud%2flowcode-hooks/-/lowcode-hooks-1.6.0.tgz#f07fd8936fefd9cb2c8d1c266a2302799f8df73e"
   integrity sha512-XaF9F06KGPc9925RF4m2JNACSy+i91qs272mrKVT8xMyDBLNA8aT8GIXNkFA/dTfMYe4mkFCTM3F6UewEF/5gQ==
 
-"@knxcloud/lowcode-utils@1.6.0", "@knxcloud/lowcode-utils@^1.6.0-beta.6":
+"@knxcloud/lowcode-utils@1.6.0", "@knxcloud/lowcode-utils@^1.6.0-beta.6", "@knxcloud/lowcode-utils@workspace:*":
   version "1.6.0"
   resolved "http://castle-npm.cp.hxdi.cn/@knxcloud%2flowcode-utils/-/lowcode-utils-1.6.0.tgz#94fb9418bed342d253b362262d57b94929705d19"
   integrity sha512-VwmL66j/93tsuZOxyHlArGMQZGU3Op6hFoJSwqbzOSOZeyds+Dso/UMLO29Jv+2hsnTiGmXrmdDehAljl3JnUw==

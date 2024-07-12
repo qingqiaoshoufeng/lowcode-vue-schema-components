@@ -1,6 +1,6 @@
 import LowCodeRender from './component/LowCodeSchemaComp.vue';
 import * as vue from 'vue/dist/vue.cjs'
-import VueRenderer from '@knxcloud/lowcode-vue-renderer';
+import VueRenderer from '@castle/lowcode-vue-renderer';
 import Icons from './component/icons'
 
 const install = (App, options = {}) => {

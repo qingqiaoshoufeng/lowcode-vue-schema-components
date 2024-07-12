@@ -45,7 +45,7 @@
 </template>
 
 <script setup>
-import VueRenderer from '@knxcloud/lowcode-vue-renderer';
+import VueRenderer from '@castle/lowcode-vue-renderer';
 import { buildComponents, AssetLoader, noop } from '@knxcloud/lowcode-utils';
 import { toRaw, Suspense, reactive, ref, watch, inject, computed } from 'vue';
 import { getSchemaByVersion } from '../api';
