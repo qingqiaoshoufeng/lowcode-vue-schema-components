@@ -2,14 +2,19 @@
 // @ts-nocheck
 import { createApp } from 'vue';
 import App from './App.vue';
-// import LowCodePreview from '../dist/lib/index.js'
-import LowCodePreview from '../src/index.js';
+// import LowCodeRender from '../dist/lib/index.js'
+import LowCodeRender from '../src/index.js';
 import axios from 'axios';
 import test from './components/textComponent.vue'
 import Antd from '@castle/ant-design-vue';
 import '@castle/ant-design-vue/dist/antd.css';
 import ComponentsTemplate from "@castle/business-components";
 import "@castle/business-components/dist/style.css";
+import * as Icons from "@ant-design/icons-vue";
+
+const icons = Icons;
+
+
 
 axios.defaults.headers.common['Authorization'] = 'Bearer YOUR_TOKEN_HERE';
 
@@ -27,11 +32,14 @@ axios.interceptors.response.use(
 
 
 const app = createApp(App);
+for (const i in icons) {
+  app.component(i, icons[i]);
+}
 app.use(Antd)
 app.use(ComponentsTemplate);
 // app.component('ProCard', test)
 
-app.use(LowCodePreview, {
+app.use(LowCodeRender, {
 	isDev: true,
 	appHelper: {
 		utils: {
@@ -77,8 +85,9 @@ app.use(LowCodePreview, {
     },
   ],
 });
+window.LowcodeMaterialAntVue = window.CASTLE_LowCode_LocalComponents = app._context.components
+
 app.mount('#app');
 
 console.log(app._context.components)
 
-window.LowcodeMaterialAntVue = window.CASTLE_LowCode_LocalComponents = app._context.components

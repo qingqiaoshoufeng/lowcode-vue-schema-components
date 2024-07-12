@@ -1,7 +1,8 @@
 <template>
 	<Suspense>
-		<LowCodePreview pageId="664d42bf7f9e73c01b06f9b1" version="latest" />
+		<LowCodeRender pageId="664d42bf7f9e73c01b06f9b1" version="latest" />
 	</Suspense>
+  <AIcon type="StarOutlined" />
 </template>
 
 <script setup>

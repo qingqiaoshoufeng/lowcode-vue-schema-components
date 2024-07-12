@@ -27,7 +27,7 @@ app.mount('#app');
 ```js
 <template>
 	<Suspense>
-		<LowCodePreview :packages="packages" :pageSchema="pageSchema" />
+		<LowCodeRender :packages="packages" :pageSchema="pageSchema" />
 	</Suspense>
 </template>
 

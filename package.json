@@ -1,7 +1,7 @@
 {
   "name": "@castle/lowcode-vue-schema-component",
   "private": false,
-  "version": "0.0.36",
+  "version": "0.0.41",
   "description": "lowcode-vue的schema渲染组件",
   "main": "dist/lib/index.js",
   "author": "ChenYang",
@@ -19,6 +19,7 @@
     "@alilc/lowcode-types": "^1.1.7",
     "@castle/ant-design-vue": "^3.2.15-castle.6",
     "@castle/business-components": "^0.2.20",
+    "@castle/lowcode-vue-schema-component": "^0.0.41",
     "@knxcloud/lowcode-utils": "^1.6.0-beta.6",
     "@knxcloud/lowcode-vue-renderer": "^1.6.0-beta.9",
     "axios": "^1.6.7",

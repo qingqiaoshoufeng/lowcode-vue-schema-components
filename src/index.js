@@ -1,6 +1,7 @@
-import LowCodePreview from './component/LowCodeSchemaComp.vue';
+import LowCodeRender from './component/LowCodeSchemaComp.vue';
 import * as vue from 'vue/dist/vue.cjs'
 import VueRenderer from '@knxcloud/lowcode-vue-renderer';
+import Icons from './component/icons'
 
 const install = (App, options = {}) => {
   App.provide('$options', options)
@@ -8,7 +9,8 @@ const install = (App, options = {}) => {
 		window.Vue = vue
 	}
 	window.LCVueRenderer = VueRenderer;
-	App.component(LowCodePreview.name, LowCodePreview);
+	App.component(LowCodeRender.name, LowCodeRender);
+  App.component('AIcon', Icons)
 }
 
 // let windowObj = window;

@@ -1823,6 +1823,39 @@
   resolved "http://castle-npm.cp.hxdi.cn/@castle%2fcastle-use/-/castle-use-0.0.2.tgz#50801960f0074d217a61f63aacdd419b64a264cd"
   integrity sha512-KO4yZ+Im31zWJWl0CmkGm/mzRyYKmL2I5gaVYNDYBdsqs+wZEzkKeQGk0BBGx/hw6RrnrqRjwz0Xn+Na7HYZkQ==
 
+"@castle/lowcode-vue-schema-component@^0.0.40":
+  version "0.0.40"
+  resolved "http://castle-npm.cp.hxdi.cn/@castle%2flowcode-vue-schema-component/-/lowcode-vue-schema-component-0.0.40.tgz#8f9c0504063314bdbd4e977a6a9c0510ac8b1761"
+  integrity sha512-yU9BzgvTTSzPS5eDjCwnSHOUSnIzYKUGvenGIjjIB+nowxpT+Ivl4dqw7NAjFrsNtx3bYKg/IrhfIN/WZMErlA==
+  dependencies:
+    "@alilc/lowcode-types" "^1.1.7"
+    "@castle/ant-design-vue" "^3.2.15-castle.6"
+    "@castle/business-components" "^0.2.20"
+    "@knxcloud/lowcode-utils" "^1.6.0-beta.6"
+    "@knxcloud/lowcode-vue-renderer" "^1.6.0-beta.9"
+    axios "^1.6.7"
+    lodash-es "^4.17.21"
+    module "^1.2.5"
+    vue "^3.2.47"
+    vue-loader "^17.4.2"
+
+"@castle/lowcode-vue-schema-component@^0.0.41":
+  version "0.0.41"
+  resolved "http://castle-npm.cp.hxdi.cn/@castle%2flowcode-vue-schema-component/-/lowcode-vue-schema-component-0.0.41.tgz#ffffe7067e496048fe4ad04d4b3c83d4451ca2c8"
+  integrity sha512-+Ab2jhs3W4x8YM/r8vZg4Fl9NEWJAZsGCDJ3bugS97GNlLmsEzKRkQz67fPpdE5Fx4YbkznkV/ah67R/AvBOkw==
+  dependencies:
+    "@alilc/lowcode-types" "^1.1.7"
+    "@castle/ant-design-vue" "^3.2.15-castle.6"
+    "@castle/business-components" "^0.2.20"
+    "@castle/lowcode-vue-schema-component" "^0.0.40"
+    "@knxcloud/lowcode-utils" "^1.6.0-beta.6"
+    "@knxcloud/lowcode-vue-renderer" "^1.6.0-beta.9"
+    axios "^1.6.7"
+    lodash-es "^4.17.21"
+    module "^1.2.5"
+    vue "^3.2.47"
+    vue-loader "^17.4.2"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "http://castle-npm.cp.hxdi.cn/@cnakazawa%2fwatch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"

@@ -184,7 +184,7 @@ const openEdit = async () => {
 
 <script>
 export default {
-	name: 'LowCodePreview',
+	name: 'LowCodeRender',
 	components: {
 		Suspense,
 		VueRenderer,
