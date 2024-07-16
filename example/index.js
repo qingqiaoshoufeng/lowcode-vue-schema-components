@@ -4,7 +4,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 // import LowCodeRender from '../dist/lib/index.js'
 import LowCodeRender from '../src/index.js';
-import axios from 'axios';
+// import axios from 'axios';
 import test from './components/textComponent.vue'
 import Antd, { message, notification } from '@castle/ant-design-vue';
 import '@castle/ant-design-vue/dist/antd.css';
