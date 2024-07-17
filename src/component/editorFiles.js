@@ -1,11 +1,11 @@
-const css = [
+const cssFiles = [
 	'https://alifd.alicdn.com/npm/@alifd/theme-lowcode-light@0.2.1/variables.css',
 	'https://alifd.alicdn.com/npm/@alifd/theme-lowcode-light@0.2.1/dist/next.var.min.css',
 	'https://alifd.alicdn.com/npm/@alilc/lowcode-engine@1.1.7/dist/css/engine-core.css',
 	'https://alifd.alicdn.com/npm/@alilc/lowcode-engine-ext@1.0.5/dist/css/engine-ext.css',
 ];
 
-const js = [
+const jsFiles = [
 	'https://g.alicdn.com/code/lib/react/16.13.1/umd/react.production.min.js',
 	'https://g.alicdn.com/code/lib/react-dom/16.13.1/umd/react-dom.production.min.js',
 	'https://g.alicdn.com/code/lib/prop-types/15.7.2/prop-types.js',
@@ -17,14 +17,10 @@ const js = [
   'http://g.alicdn.com/code/npm/@ali/ant-design-icons-cdn/4.5.0/index.umd.min.js',
 ];
 
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = process.env.IS_DEV === 'true';
+const editorCss = [isDev ? 'http://localhost:5558/css/editor.css' : 'http://10.13.4.153:1108/css/editor.css']
+const editorJs = [isDev ? 'http://localhost:5558/js/editor.js' : 'http://10.13.4.153:1108/js/editor.js']
 
-if (isDev && false) {
-  css.push('http://localhost:5558/css/editor.css')
-  js.push('http://localhost:5558/js/editor.js')
-} else {
-  css.push('http://10.13.4.153:1108/css/editor.css')
-  js.push('http://10.13.4.153:1108/js/editor.js')
-}
-
+const css = cssFiles.concat(editorCss)
+const js = jsFiles.concat(editorJs)
 export { css, js };

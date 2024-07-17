@@ -2,13 +2,15 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
+const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = ({ onGetWebpackConfig }) => {
   onGetWebpackConfig((config) => {
     config.merge({
       node: {
         fs: 'empty',
-      },
+      }
     });
 
     config.module // fixes https://github.com/graphql/graphql-js/issues/1272
@@ -25,7 +27,11 @@ module.exports = ({ onGetWebpackConfig }) => {
       .loader('vue-loader')
       .end();
 
-    config.plugin('BundleAnalyzerPlugin').use(BundleAnalyzerPlugin);
+    // config.plugin('define').use(webpack.DefinePlugin, [{
+    //   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    // }])
+
+    // config.plugin('BundleAnalyzerPlugin').use(BundleAnalyzerPlugin);
     config.plugin('vue-loader-plugin').use(VueLoaderPlugin);
     // config.merge({
     //   output: {
@@ -48,7 +54,7 @@ module.exports = ({ onGetWebpackConfig }) => {
 
     config.resolve.merge({
       alias: {
-        '@': path.resolve(__dirname, 'src'),
+        '@': path.resolve(__dirname, 'src')
       },
     });
   });

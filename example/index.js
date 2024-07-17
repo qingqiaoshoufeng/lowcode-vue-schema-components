@@ -22,7 +22,7 @@ axios.interceptors.response.use(
   (response) => {
     const { data } = response;
     const { code, data: resData, message, msg } = data;
-    return resData;
+    return resData?.data || resData
   },
   (error) => {
     return Promise.reject(error);
@@ -36,8 +36,8 @@ for (const i in icons) {
   app.component(i, icons[i]);
 }
 app.use(Antd)
-app.component('message', message)
-app.component('notification', notification)
+app.component('Message', message)
+app.component('Notification', notification)
 app.use(ComponentsTemplate);
 // app.component('ProCard', test)
 

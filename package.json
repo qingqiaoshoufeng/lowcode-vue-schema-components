@@ -1,7 +1,7 @@
 {
   "name": "@castle/lowcode-vue-schema-component",
   "private": false,
-  "version": "0.0.48",
+  "version": "0.0.51",
   "description": "lowcode-vue的schema渲染组件",
   "main": "dist/lib/index.js",
   "author": "ChenYang",
@@ -29,6 +29,7 @@
     "@knxcloud/lowcode-hooks": "^1.6.0",
     "@knxcloud/lowcode-utils": "^1.6.0",
     "@knxcloud/lowcode-vue-renderer": "^1.6.0",
+    "dotenv-webpack": "^8.1.0",
     "lodash-es": "^4.17.21",
     "module": "^1.2.5",
     "vue": "^3.2.47",

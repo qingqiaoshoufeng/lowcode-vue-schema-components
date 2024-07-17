@@ -1,6 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = ({ onGetWebpackConfig }) => {
   onGetWebpackConfig((config) => {
@@ -34,6 +35,11 @@ module.exports = ({ onGetWebpackConfig }) => {
       .end();
 
     config.plugin('vue-loader-plugin').use(VueLoaderPlugin);
+
+    config.plugin('define').use(Dotenv, [{
+      path: './.env'
+    }])
+
     // config.merge({
     //   output: {
     //     path: path.resolve(__dirname, 'lib'),
