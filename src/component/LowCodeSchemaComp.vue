@@ -152,8 +152,8 @@ watch(
 );
 
 const closeEdit = async () => {
-  await Promise.all(js.map(j => unloadScript(j)))
   await Promise.all(css.map(c => unloadStyle(c)))
+  await Promise.all(js.map(j => unloadScript(j)))
   removeDuplicateScriptTags();
   handleRenderData();
 }
