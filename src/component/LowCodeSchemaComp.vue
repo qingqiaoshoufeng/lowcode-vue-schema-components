@@ -62,7 +62,7 @@ window['__VUE_HMR_RUNTIME__'] = {
 	createRecord: noop,
 };
 
-const { isDev, appHelper, fetchHandler, localComponents, ...othersProps } = inject('$options');
+const { isDev, appHelper, fetchHandler, localComponents, baseUrl, ...othersProps } = inject('$options');
 
 const props = defineProps({
 	// 公网外部参数
@@ -101,7 +101,7 @@ const init = async () => {
 		const res = await getSchemaByVersion({
 			pageId: props.pageId,
 			version: props.version,
-		});
+		}, baseUrl);
 		packages = res.packages;
 		pageSchema = res.pageSchema;
 	} else {
