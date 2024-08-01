@@ -10,8 +10,12 @@
 							:components="data.components"
 							:appHelper="mergedAppHelper"
 							:requestHandlersMap="requestHandlersMap"
+              v-if="!disabled"
               v-bind="passProps"
 						/>
+            <div v-else class="disabled-placeholder">
+              <span>当前渲染已禁用，如需取消，请删除 disabled 属性</span>
+            </div>
 					</spin>
 					<button
 						v-if="isDev"
@@ -77,6 +81,10 @@ const props = defineProps({
 	pageName: '',
 	version: '',
 	pageId: '',
+  disabled: {
+    type: Boolean,
+    default: false
+  },
 });
 
 const mergedAppHelper = computed(() => merge((appHelper || {}), (props.appHelper || {})));
@@ -152,8 +160,10 @@ watch(
 );
 
 const closeEdit = async () => {
-  await Promise.all(css.map(c => unloadStyle(c)))
   await Promise.all(js.map(j => unloadScript(j)))
+  setTimeout(() => {
+    Promise.all(css.map(c => unloadStyle(c)))
+  }, 300);
   removeDuplicateScriptTags();
   handleRenderData();
 }

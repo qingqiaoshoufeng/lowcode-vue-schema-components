@@ -9,7 +9,7 @@
 
 .vue-renderer-wrap .edit-page {
   display: none;
-  transform: translateX(-50%) translateY(100%);
+  transform: translateX(50%) translateY(100%);
   cursor: pointer;
 }
 
@@ -64,3 +64,9 @@ div#lce-container {
 /* .full-modal .ant-modal-footer {
   display: none;
 } */
+
+.disabled-placeholder {
+  border: 1px dashed #ccc;
+  padding: 16px;
+  background: #fafafa;
+}

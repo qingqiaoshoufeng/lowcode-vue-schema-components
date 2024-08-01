@@ -78,7 +78,7 @@ app.use(LowCodeRender, {
       snippets: [
         {
           title: 'ProCard',
-          screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/affix-1.jpg',
+          screenshot: 'http://10.13.4.153:9000/lowcode-resource/lowcode-cdn/affix-1.jpg',
           schema: {
             componentName: 'ProCard',
           },

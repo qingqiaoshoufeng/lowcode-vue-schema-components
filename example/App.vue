@@ -1,6 +1,6 @@
 <template>
 	<Suspense>
-		<LowCodeRender pageId="664d42bf7f9e73c01b06f9b1" version="latest" />
+		<LowCodeRender pageId="66a73915711b15866a524d8d" version="latest" />
 	</Suspense>
   <AIcon type="StarOutlined" />
 </template>
